@@ -6,7 +6,7 @@ language: c++
 summary: np C++ bare
 license: GPL-3.0-or-later ; GNU General Public License v3.0 or later.
 description-file: README.md
-url: https://example.org/np
+url: https://github.com/wroyca/np
 email: wroy@proton.me
 # build-error-email: wroy@proton.me
 depends: * build2 >= 0.18.0-
