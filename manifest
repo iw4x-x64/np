@@ -1,0 +1,13 @@
+: 1
+name: np
+version: 0.1.0-a.0.z
+type: other
+language: c++
+summary: np C++ bare
+license: GPL-3.0-or-later ; GNU General Public License v3.0 or later.
+description-file: README.md
+url: https://example.org/np
+email: wroy@proton.me
+# build-error-email: wroy@proton.me
+depends: * build2 >= 0.18.0-
+depends: * bpkg >= 0.18.0-
