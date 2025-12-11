@@ -1,0 +1,155 @@
+@import 'sections/header.css';
+@import 'sections/hero.css';
+@import 'sections/footer.css';
+
+:root {
+  --bg: #080808;
+  --text: #ffffff;
+  --text-dim: #888888;
+  --accent: #F5CE64;
+  --border: rgba(255, 255, 255, 0.1);
+  --font-main: 'Archivo', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Responsive spacing */
+  --padding-x: 1.5rem;
+  --padding-y: 2rem;
+  --section-padding: 4rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --padding-x: 3rem;
+    --padding-y: 3rem;
+    --section-padding: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --padding-x: 4rem;
+    --padding-y: 4rem;
+    --section-padding: 8rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid Overlay */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .grid-overlay {
+    background-size: 75px 75px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-overlay {
+    background-size: 100px 100px;
+  }
+}
+
+/* Main */
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  /* Header height */
+}
+
+/* Global Typography Helpers */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .section-text {
+    font-size: 1.2rem;
+  }
+}

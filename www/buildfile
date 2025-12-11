@@ -1,0 +1,9 @@
+./: {css html js}{**}
+
+# Install files under /usr/share/www, preserving their directory structure.
+#
+*:
+{
+  install         = /var/www/html/
+  install.subdirs = true
+}
