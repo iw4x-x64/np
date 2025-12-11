@@ -1,0 +1,11 @@
+import libs  = libapr1%lib{apr-1}
+import libs += libapreq2%lib{apreq2}
+
+libus{web-server}: {hxx ixx txx cxx}{**} $libs
+
+# Don't install any of the web server's headers.
+#
+{hxx ixx txx}{*}:
+{
+  install.subdirs = false
+}

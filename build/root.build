@@ -23,6 +23,10 @@ html{*}: extension = html
 define js: file
 js{*}: extension = js
 
+# Build options.
+#
+cxx.poptions =+ "-I$out_root" "-I$src_root"
+
 # The test target for cross-testing (running tests under Wine, etc).
 #
 test.target = $cxx.target

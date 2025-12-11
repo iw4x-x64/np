@@ -1,0 +1,30 @@
+define mod: libs
+
+mod{*}:
+{
+  backlink = true
+  bin.lib.prefix = mod_
+  install = libexec/
+}
+
+intf_libs = # Interface dependencies.
+impl_libs = # Implementation dependencies.
+
+include ../libnp/
+include ../web/server/
+
+# Apache httpd headers.
+#
+cxx.poptions =+ -I/usr/include/httpd
+
+mod{np}: {hxx ixx txx cxx}{**}           \
+         ../libnp/lib{np}                \
+         ../web/server/libus{web-server} \
+         $impl_libs $intf_libs
+
+# Don't install any of the module's headers.
+#
+{hxx ixx txx}{*}:
+{
+  install.subdirs = false
+}
