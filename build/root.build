@@ -9,6 +9,11 @@ ixx{*}: extension = ixx
 txx{*}: extension = txx
 cxx{*}: extension = cxx
 
+# Apache2 configuration files.
+#
+define conf: file
+conf{*}: extension = conf
+
 # The test target for cross-testing (running tests under Wine, etc).
 #
 test.target = $cxx.target

@@ -36,6 +36,6 @@ else
 #
 {hxx ixx txx}{*}:
 {
-  install         = include/libnp/
+  install         = /usr/include/libnp/
   install.subdirs = true
 }
