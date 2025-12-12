@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libnp/mod/
+}
+
+export $out_root/libnp/mod/$import.target
