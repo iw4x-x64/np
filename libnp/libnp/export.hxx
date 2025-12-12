@@ -6,13 +6,13 @@
 #  define LIBNP_SYMEXPORT
 #elif defined(LIBNP_SHARED)
 #  ifdef _WIN32
-#    define LIBNP_SYMEXPORT __declspec(dllimport)
+#    define LIBNP_SYMEXPORT __declspec (dllimport)
 #  else
 #    define LIBNP_SYMEXPORT
 #  endif
 #elif defined(LIBNP_SHARED_BUILD)
 #  ifdef _WIN32
-#    define LIBNP_SYMEXPORT __declspec(dllexport)
+#    define LIBNP_SYMEXPORT __declspec (dllexport)
 #  else
 #    define LIBNP_SYMEXPORT
 #  endif

@@ -34,11 +34,18 @@ if $version.pre_release
 else
   lib{np}: bin.lib.version = "-$version.major.$version.minor"
 
+# Install into the libnp/ subdirectory of, say, /usr/lib/.
+#
+lib{np}:
+{
+  install = /usr/lib/
+}
+
 # Install into the libnp/ subdirectory of, say, /usr/include/
 # recreating subdirectories.
 #
 {hxx ixx txx}{*}:
 {
-  install         = include/libnp/
+  install         = /usr/include/libnp/
   install.subdirs = true
 }

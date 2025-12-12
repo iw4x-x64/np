@@ -1,3 +1,0 @@
-import libs = libnp-mod%lib{np-mod}
-
-exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

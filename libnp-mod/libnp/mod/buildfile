@@ -1,44 +1,32 @@
+define mod: libs
+
+mod{*}:
+{
+  bin.lib.prefix = mod_
+
+  # Install into the libnp-mod/ subdirectory of, say, /usr/libexec/
+  #
+  install = /usr/libexec/
+}
+
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 
-lib{np-mod}: {hxx ixx txx cxx}{** -version} \
-             {hxx            }{    version} \
-             $impl_libs $intf_libs
-
-hxx{version}: in{version} $src_root/manifest
+mod{np}: {hxx ixx txx cxx}{**} \
+         $impl_libs $intf_libs
 
 # Build options.
 #
 cxx.poptions =+ "-I$out_root" "-I$src_root"
 
-obja{*}: cxx.poptions += -DLIBNP_MOD_STATIC_BUILD
-objs{*}: cxx.poptions += -DLIBNP_MOD_SHARED_BUILD
-
-# Export options.
+# The httpd package does not provide pkg-config metadata, so we specify the
+# header directory explicitly.
 #
-lib{np-mod}:
-{
-  cxx.export.poptions = "-I$out_root" "-I$src_root"
-  cxx.export.libs = $intf_libs
-}
+cxx.poptions =+ "-I/usr/include/httpd"
 
-liba{np-mod}: cxx.export.poptions += -DLIBNP_MOD_STATIC
-libs{np-mod}: cxx.export.poptions += -DLIBNP_MOD_SHARED
-
-# For pre-releases use the complete version to make sure they cannot
-# be used in place of another pre-release or the final version. See
-# the version module for details on the version.* variable values.
-#
-if $version.pre_release
-  lib{np-mod}: bin.lib.version = "-$version.project_id"
-else
-  lib{np-mod}: bin.lib.version = "-$version.major.$version.minor"
-
-# Install into the libnp/mod/ subdirectory of, say, /usr/include/
-# recreating subdirectories.
+# Don't install any of the module's headers.
 #
 {hxx ixx txx}{*}:
 {
-  install         = include/libnp/mod/
-  install.subdirs = true
+  install.subdirs = false
 }
