@@ -1,0 +1,14 @@
+namespace np
+{
+  namespace options
+  {
+    class database
+    {
+      std::string np-db-user
+      {
+        "<user>",
+        "Database login user name."
+      }
+    };
+  }
+}

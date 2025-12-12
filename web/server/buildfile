@@ -3,6 +3,10 @@ import libs += libapreq2%lib{apreq2}
 
 libus{web-server}: {hxx ixx txx cxx}{**} $libs
 
+# Apache httpd headers.
+#
+cxx.poptions =+ -I/usr/include/httpd
+
 # Don't install any of the web server's headers.
 #
 {hxx ixx txx}{*}:

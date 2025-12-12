@@ -1,3 +1,9 @@
+using in
+
+define cli: file
+
+cli{*}: extension = cli
+
 cxx.internal.scope = current
 
 cxx.std = latest
@@ -30,3 +36,9 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 # The test target for cross-testing (running tests under Wine, etc).
 #
 test.target = $cxx.target
+
+# Pre-defined semantics to distinguish between development and consumption
+# builds.
+#
+config [bool] config.np.develop ?= false
+develop = $config.np.develop # shorthand
