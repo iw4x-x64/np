@@ -12,6 +12,9 @@ mod{*}:
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 
+import intf_libs += libapr1%lib{apr-1}
+import intf_libs += libapreq2%lib{apreq2}
+
 options = mod-options
 
 mod{np}: {hxx ixx txx cxx}{** -*-options -pregenerated/**} \
