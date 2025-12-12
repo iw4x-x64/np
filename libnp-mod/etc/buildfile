@@ -1,0 +1,9 @@
+./: conf{**}
+
+# Install files under /etc, preserving their directory structure.
+#
+*:
+{
+  install         = etc/
+  install.subdirs = true
+}

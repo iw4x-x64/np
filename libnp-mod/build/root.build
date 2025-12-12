@@ -15,6 +15,20 @@ ixx{*}: extension = ixx
 txx{*}: extension = txx
 cxx{*}: extension = cxx
 
+# Apache2 files.
+#
+define conf: file
+conf{*}: extension = conf
+
+define css: file
+css{*}: extension = css
+
+define html: file
+html{*}: extension = html
+
+define js: file
+js{*}: extension = js
+
 # The test target for cross-testing (running tests under Wine, etc).
 #
 test.target = $cxx.target
