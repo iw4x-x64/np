@@ -1,0 +1,34 @@
+#pragma once
+
+// The numeric version format is AAAAABBBBBCCCCCDDDE where:
+//
+// AAAAA - major version number
+// BBBBB - minor version number
+// CCCCC - bugfix version number
+// DDD   - alpha / beta (DDD + 500) version number
+// E     - final (0) / snapshot (1)
+//
+// When DDDE is not 0, 1 is subtracted from AAAAABBBBBCCCCC. For example:
+//
+// Version      AAAAABBBBBCCCCCDDDE
+//
+// 0.1.0        0000000001000000000
+// 0.1.2        0000000001000020000
+// 1.2.3        0000100002000030000
+// 2.2.0-a.1    0000200001999990010
+// 3.0.0-b.2    0000299999999995020
+// 2.2.0-a.1.z  0000200001999990011
+//
+#define LIBNP_VERSION       $libnp.version.project_number$ULL
+#define LIBNP_VERSION_STR   "$libnp.version.project$"
+#define LIBNP_VERSION_ID    "$libnp.version.project_id$"
+#define LIBNP_VERSION_FULL  "$libnp.version$"
+
+#define LIBNP_VERSION_MAJOR $libnp.version.major$
+#define LIBNP_VERSION_MINOR $libnp.version.minor$
+#define LIBNP_VERSION_PATCH $libnp.version.patch$
+
+#define LIBNP_PRE_RELEASE   $libnp.version.pre_release$
+
+#define LIBNP_SNAPSHOT_SN   $libnp.version.snapshot_sn$ULL
+#define LIBNP_SNAPSHOT_ID   "$libnp.version.snapshot_id$"
