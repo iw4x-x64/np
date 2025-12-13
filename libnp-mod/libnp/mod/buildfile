@@ -6,7 +6,7 @@ mod{*}:
 
   # Install into the libnp-mod/ subdirectory of, say, /usr/libexec/
   #
-  install = /usr/libexec/
+  install = /usr/libexec/libnp-mod/
 }
 
 intf_libs = # Interface dependencies.
@@ -114,8 +114,9 @@ if $develop
   if diff $dh $h >- && \
      diff $di $i >- && \
      diff $dc $c >-
+  {
     exit
-  end
+  }
 
   cp $h $dh
   cp $i $di
@@ -129,5 +130,5 @@ if $develop
 #
 {hxx ixx txx}{*}:
 {
-  install.subdirs = false
+  install = false
 }

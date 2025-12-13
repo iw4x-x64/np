@@ -9,7 +9,7 @@
 //
 // End prologue.
 
-#include <libnp/mod/module-options.hxx>
+#include <libnp/mod/mod-options.hxx>
 
 #include <map>
 #include <set>

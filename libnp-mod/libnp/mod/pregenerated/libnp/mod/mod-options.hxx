@@ -4,8 +4,8 @@
 // compiler for C++.
 //
 
-#ifndef LIBNP_MOD_MODULE_OPTIONS_HXX
-#define LIBNP_MOD_MODULE_OPTIONS_HXX
+#ifndef LIBNP_MOD_MOD_OPTIONS_HXX
+#define LIBNP_MOD_MOD_OPTIONS_HXX
 
 // Begin prologue.
 //
@@ -571,11 +571,11 @@ namespace np
   }
 }
 
-#include <libnp/mod/module-options.ixx>
+#include <libnp/mod/mod-options.ixx>
 
 // Begin epilogue.
 //
 //
 // End epilogue.
 
-#endif // LIBNP_MOD_MODULE_OPTIONS_HXX
+#endif // LIBNP_MOD_MOD_OPTIONS_HXX

@@ -3,6 +3,8 @@ name: libnp-mod
 version: 0.1.0-a.0.z
 summary: np-mod C++ library
 license: GPL-3.0-or-later ; GNU General Public License v3.0 or later.
+depends: * build2 >= 0.18.0-
+depends: * bpkg >= 0.18.0-
 depends: * cli
 depends: libapr1
 depends: libapreq2
